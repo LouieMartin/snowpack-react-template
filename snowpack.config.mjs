@@ -14,6 +14,8 @@ export default {
         ...(process.versions.pnp ? { tsc: 'yarn pnpify tsc' } : {}),
       },
     ],
+    '@snowpack/plugin-postcss',
+    '@snowpack/plugin-sass',
   ],
   routes: [
     /* Enable an SPA Fallback in development: */
@@ -27,7 +29,7 @@ export default {
     /* ... */
   },
   devOptions: {
-    /* ... */
+    tailwindConfig: './tailwind.config.js',
   },
   buildOptions: {
     /* ... */

@@ -1,41 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { createState, useState } from '@hookstate/core';
+import './App.scss';
 
-interface AppProps {}
+const globalCount = createState(0);
 
-function App({}: AppProps) {
-  // Create the count state.
-  const [count, setCount] = useState(0);
-  // Create the counter (+1 every second).
-  useEffect(() => {
-    const timer = setTimeout(() => setCount(count + 1), 1000);
-    return () => clearTimeout(timer);
-  }, [count, setCount]);
-  // Return the App component.
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <p>
-          Page has been open for <code>{count}</code> seconds.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
-    </div>
-  );
-}
+setInterval(() => globalCount.set(n => n + 1), 3000);
 
-export default App;
+export const App = () => {
+    const count = useState(globalCount);
+    const increment = () => count.set(n => n + 1);
+    const decrement = () => count.set(n => n - 1);
+
+    return (
+        <div className="flex flex-col justify-center items-center h-screen text-gray-900">
+            <h1 className="font-bold text-6xl">Count {count.get()}</h1>
+            <button className="border border-gray-900 p-3 rounded-full w-52 mt-5" onClick={increment}>Increment</button>
+            <button className="border border-gray-900 p-3 rounded-full w-52 mt-5" onClick={decrement}>Decrement</button>
+        </div>
+    );
+};
