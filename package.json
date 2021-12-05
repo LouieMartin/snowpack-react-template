@@ -25,6 +25,7 @@
     "@types/react-dom": "^17.0.3",
     "@types/snowpack-env": "^2.3.3",
     "@web/test-runner": "^0.13.3",
+    "autoprefixer": "^10.4.0",
     "chai": "^4.3.4",
     "postcss": "^8.4.4",
     "prettier": "^2.2.1",
