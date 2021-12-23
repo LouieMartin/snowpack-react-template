@@ -1,4 +1,13 @@
 {
+  "name": "snowpack-react-template",
+  "version": "1.0.0",
+  "description": "A template for React.js that is using Snowpack with built-in TypeScript, Sass, and Tailwind CSS, and a state management tool called HookState!",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LouieMartin/snowpack-react-template.git"
+  },
+  "author": "DoNotHaveAnIdeaForAUsername <louie.decierdo@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
