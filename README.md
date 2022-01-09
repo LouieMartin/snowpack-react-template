@@ -19,3 +19,11 @@ Makes a static copy of your app in the directory `build/`.
 
 Runs all files that end with `.test.tsx` in the directory `src/`.
 Add the watch flag if you want to run in interactive watch mode.
+
+### yarn run format
+
+Formats all files with Prettier.
+
+### yarn run lint
+
+Makes sure all the files are formatted.
