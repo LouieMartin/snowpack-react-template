@@ -1,25 +1,21 @@
 # Snowpack React Template
 
-> ✨ Bootstrapped with Create Snowpack App (CSA).
+## Setup
+
+In order to setup this template run this command `yarn install`
 
 ## Available Scripts
 
-### yarn start
+### yarn run start
 
-Runs the app in the development mode.
-Open http://localhost:8080 to view it in the browser.
-
-The page will reload if you make edits.
-You will also see any lint errors in the console.
+Runs the development server of this template.
+Open http://localhost:8080/ to view it on the browser.
 
 ### yarn run build
 
-Builds a static copy of your site to the `build/` folder.
-Your app is ready to be deployed!
+Makes a static copy of your app in the directory `build/`.
 
-**For the best production performance:** Add a build bundler plugin like "@snowpack/plugin-webpack" to your `snowpack.config.mjs` config file.
+### yarn run test
 
-### yarn test
-
-Launches the application test runner.
-Run with the `--watch` flag (`yarn test -- --watch`) to run in interactive watch mode.
+Runs all files that end with `.test.tsx` in the directory `src/`.
+Add the watch flag if you want to run in interactive watch mode.
