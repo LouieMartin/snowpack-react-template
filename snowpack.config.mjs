@@ -14,6 +14,7 @@ export default {
         ...(process.versions.pnp ? { tsc: 'yarn pnpify tsc' } : {}),
       },
     ],
+    '@snowpack/plugin-webpack',
     '@snowpack/plugin-postcss',
     '@snowpack/plugin-sass',
   ],
