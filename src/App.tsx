@@ -47,8 +47,8 @@ export const App = () => {
         backgroundColor: colorScheme === 'dark' ? theme.colors.dark[7] : undefined,
       }}>
         <Title order={1} sx={{ marginBottom: '1em', }}>Count {count}</Title>
-        <Button sx={{ marginBottom: '1em', }} size='lg' onClick={increment}>Increment</Button>
-        <Button size='lg' onClick={decrement}>Decrement</Button>
+        <Button sx={{ marginBottom: '1em', }} size='lg' onClick={decrement}>Decrement</Button>
+        <Button size='lg' onClick={increment}>Increment</Button>
       </Box>
     </Box>
   );
