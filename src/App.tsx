@@ -8,13 +8,20 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 import { SunIcon, MoonIcon } from '@modulz/radix-icons';
+import { useInterval } from '@mantine/hooks';
 
 export const App = () => {
   const [count, setCount] = React.useState<number>(0);
+  const interval = useInterval(() => setCount(oldCount => oldCount + 1), 1000);
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const theme = useMantineTheme();
   const increment = () => setCount(oldCount => oldCount + 1);
   const decrement = () => setCount(oldCount => oldCount - 1);
+
+  React.useEffect(() => {
+    interval.start();
+    return () => interval.stop();
+  }, []);
 
   return (
     <Box>
@@ -40,8 +47,8 @@ export const App = () => {
         backgroundColor: colorScheme === 'dark' ? theme.colors.dark[7] : undefined,
       }}>
         <Title order={1} sx={{ marginBottom: '1em', }}>Count {count}</Title>
-        <Button sx={{ marginBottom: '1em', }} size='xl' onClick={increment}>Increment</Button>
-        <Button size='xl' onClick={decrement}>Decrement</Button>
+        <Button sx={{ marginBottom: '1em', }} size='lg' onClick={increment}>Increment</Button>
+        <Button size='lg' onClick={decrement}>Decrement</Button>
       </Box>
     </Box>
   );
